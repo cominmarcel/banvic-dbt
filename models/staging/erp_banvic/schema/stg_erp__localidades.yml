@@ -1,0 +1,10 @@
+models:
+  - name: stg_erp__localidades
+    description: modelo staging localidades
+    columns:
+      - name: pk_localidade
+        description: Chave primaria da localidade
+      - name: cidade
+        description: cidade
+      - name: uf
+        description: uf
