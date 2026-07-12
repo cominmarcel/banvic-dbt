@@ -14,8 +14,28 @@ sources:
                - not_null
               
       - name: clientes
-        description: Tabela fonte de clientes com informações pessoais de cada cliente da Banvic.
+        description: Tabela que armazena dados dos clientes, incluindo nome, e-mail, tipo de cliente, CPF/CNPJ, data de nascimento e endereço.
+        columns:
+          - name: cod_cliente
+            description: Chave primaria da tabela clientes.
+            data_tests:
+                     - unique
+                     - not_null
+
       - name:  agencias
-        description: Tabela fonte de agencias com informações pessoais de cada colaboradores da Banvic.
+        description: Tabela que contem informações sobre as agencias, como nome, endereço, cidade, estado, tipo de agencia e data de abertura
+        columns:
+          - name: cod_agencia
+            description: Chave primaria da tabela agencias
+            data_tests:
+               - unique
+               - not_null
+
       - name:  colaboradores
-        description: Tabela fonte de colaboradores com informações de cada agencia da Banvic.
+        description: Tabela que contem dados dos colaboradores, como nome, e-mail, CPF, data de nascimento e endereço.
+        columns:
+          - name: cod_colaborador
+            description: Chave primaria da tabela colaboradores.
+            data_tests:
+               - unique
+               - not_null
