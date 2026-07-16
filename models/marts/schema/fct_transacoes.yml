@@ -7,33 +7,38 @@ models:
       - name: fk_conta
         description: Chave estrangeira que referencia a conta onde a transação foi realizada.
         data_tests:
-          - relationships:
-              to: ref('dim_contas')
-              field: pk_conta
+          - dbt_utils.relationships_where:
+              arguments:
+                to: ref('dim_contas')
+                field: pk_conta
       - name: fk_cliente
         description: Chave estrangeira que referencia o cliente titular da conta.
         data_tests:
-          - relationships:
-              to: ref('dim_clientes')
-              field: pk_cliente
+          - dbt_utils.relationships_where:
+              arguments:
+                to: ref('dim_clientes')
+                field: pk_cliente
       - name: fk_agencia
         description: Chave estrangeira que referencia a agência vinculada à conta.
         data_tests:
-          - relationships:
-              to: ref('dim_agencias')
-              field: pk_agencia
+          - dbt_utils.relationships_where:
+              arguments:
+                to: ref('dim_agencias')
+                field: pk_agencia
       - name: fk_colaborador
         description: Chave estrangeira que referencia o colaborador responsável pela conta.
         data_tests:
-          - relationships:
-              to: ref('dim_colaboradores')
-              field: pk_colaborador
+          - dbt_utils.relationships_where:
+              arguments:
+                to: ref('dim_colaboradores')
+                field: pk_colaborador
       - name: fk_data
         description: Chave estrangeira que referencia a dimensão de datas correspondente à data da transação.
         data_tests:
-          - relationships:
-              to: ref('dim_datas')
-              field: pk_data
+          - dbt_utils.relationships_where:
+              arguments:
+                to: ref('dim_datas')
+                field: pk_data
       - name: numero_transacao
         description: Número identificador da transação.
       - name: data_transacao
